@@ -19,19 +19,6 @@
 
 适用于：数学 · 物理 · 计算机 · 英语 · 人文社科 · 经管法 · 医学 · 任何学科。
 
-## 兼容的 AI Agent
-
-本模板的 Skill 定义（`skills/subject-final-review/SKILL.md`）兼容以下 AI Agent：
-
-| Agent | 加载方式 |
-|-------|---------|
-| **Hermes Agent** | 复制到 `~/.hermes/skills/` |
-| **Claude Code** | 放入项目的 `CLAUDE.md` 引用或 `.claude/` 目录 |
-| **OpenAI Codex** | 放入项目的 `AGENTS.md` 或 Codex 指令文件 |
-| **Trae** | 放入项目的 `.trae/rules/` 目录 |
-| **Cursor** | 放入项目的 `.cursorrules` 或 `.cursor/rules/` |
-| **其他 Agent** | 只要支持 Markdown 指令文件即可加载 |
-
 ## 目录结构
 
 ```
@@ -44,28 +31,23 @@ final-review-template-kit/
 │   └── final-mock-exam-template.tex       # 模拟卷模板
 └── skills/
     └── subject-final-review/
-        └── SKILL.md                       # Agent Skill 定义（通用）
+        └── SKILL.md                       # Agent Skill 定义
 ```
 
 ## 快速开始
 
 ### 方式一：配合 AI Agent 使用（推荐）
 
-将 `skills/subject-final-review/SKILL.md` 的内容加载到你使用的 Agent 中，然后上传样卷/复习材料，说"帮我做期末复习包"即可。
+把下面这段话连同 Skill 文件内容一起丢给你的 AI Agent（Claude Code、Codex、Trae、Cursor、Hermes 等都行）：
 
-```bash
-# Hermes Agent
-cp -r skills/subject-final-review ~/.hermes/skills/
-
-# Claude Code — 放入项目目录，Claude 会自动读取
-cp skills/subject-final-review/SKILL.md ./CLAUDE.md
-
-# Cursor — 放入项目根目录
-cp skills/subject-final-review/SKILL.md ./.cursorrules
-
-# Trae
-mkdir -p .trae/rules && cp skills/subject-final-review/SKILL.md .trae/rules/
 ```
+请阅读这个 Skill 定义并按流程执行：
+https://raw.githubusercontent.com/jry21223/final-review-template-kit/main/skills/subject-final-review/SKILL.md
+
+我上传了 [课程名称] 的样卷/复习资料，请帮我生成完整期末复习包。
+```
+
+Agent 会自动下载 Skill、分析材料、生成讲义和模拟卷。
 
 ### 方式二：手动使用 LaTeX 模板
 
@@ -167,6 +149,10 @@ grep -RInE "真实姓名|个人署名|学校全称|学院全称|教师姓名" .
 - **严格匹配** — 模拟卷的题型/题量/分值必须和样卷一致
 - **原创出题** — 禁止复制旧题、改数字、换变量名、打乱选项
 - **安全模板** — 公开版本只含占位符，不含个人信息
+
+## 作者
+
+[jry21223](https://github.com/jry21223)
 
 ## License
 
