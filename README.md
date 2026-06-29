@@ -19,6 +19,19 @@
 
 适用于：数学 · 物理 · 计算机 · 英语 · 人文社科 · 经管法 · 医学 · 任何学科。
 
+## 预览
+
+### 复习知识点讲义
+
+![讲义封面](previews/notes-preview-1.png)
+![考点优先级](previews/notes-preview-2.png)
+![模块化知识点](previews/notes-preview-3.png)
+
+### 模拟卷
+
+![模拟卷封面](previews/mock-preview-1.png)
+![答案解析](previews/mock-preview-2.png)
+
 ## 目录结构
 
 ```
