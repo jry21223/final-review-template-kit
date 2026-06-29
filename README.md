@@ -4,7 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![LaTeX](https://img.shields.io/badge/LaTeX-XeLaTeX-green.svg)](https://www.latex-project.org/)
-[![Hermes Agent](https://img.shields.io/badge/Hermes%20Agent-Skill-purple.svg)](https://hermes-agent.nousresearch.com)
+[![AI Agent](https://img.shields.io/badge/AI%20Agent-Compatible-purple.svg)](#方式一配合-ai-agent-使用推荐)
 
 ## 这是什么？
 
@@ -19,6 +19,19 @@
 
 适用于：数学 · 物理 · 计算机 · 英语 · 人文社科 · 经管法 · 医学 · 任何学科。
 
+## 兼容的 AI Agent
+
+本模板的 Skill 定义（`skills/subject-final-review/SKILL.md`）兼容以下 AI Agent：
+
+| Agent | 加载方式 |
+|-------|---------|
+| **Hermes Agent** | 复制到 `~/.hermes/skills/` |
+| **Claude Code** | 放入项目的 `CLAUDE.md` 引用或 `.claude/` 目录 |
+| **OpenAI Codex** | 放入项目的 `AGENTS.md` 或 Codex 指令文件 |
+| **Trae** | 放入项目的 `.trae/rules/` 目录 |
+| **Cursor** | 放入项目的 `.cursorrules` 或 `.cursor/rules/` |
+| **其他 Agent** | 只要支持 Markdown 指令文件即可加载 |
+
 ## 目录结构
 
 ```
@@ -31,20 +44,27 @@ final-review-template-kit/
 │   └── final-mock-exam-template.tex       # 模拟卷模板
 └── skills/
     └── subject-final-review/
-        └── SKILL.md                       # Hermes Agent Skill 定义
+        └── SKILL.md                       # Agent Skill 定义（通用）
 ```
 
 ## 快速开始
 
-### 方式一：配合 Hermes Agent 使用（推荐）
+### 方式一：配合 AI Agent 使用（推荐）
 
-1. 将 `skills/subject-final-review/` 复制到你的 Hermes skills 目录
-2. 上传样卷/复习材料到对话中
-3. 说"帮我做期末复习包"，AI 会自动按 Skill 流程生成
+将 `skills/subject-final-review/SKILL.md` 的内容加载到你使用的 Agent 中，然后上传样卷/复习材料，说"帮我做期末复习包"即可。
 
 ```bash
-# 复制 skill 到 Hermes
+# Hermes Agent
 cp -r skills/subject-final-review ~/.hermes/skills/
+
+# Claude Code — 放入项目目录，Claude 会自动读取
+cp skills/subject-final-review/SKILL.md ./CLAUDE.md
+
+# Cursor — 放入项目根目录
+cp skills/subject-final-review/SKILL.md ./.cursorrules
+
+# Trae
+mkdir -p .trae/rules && cp skills/subject-final-review/SKILL.md .trae/rules/
 ```
 
 ### 方式二：手动使用 LaTeX 模板
