@@ -152,7 +152,7 @@ grep -RInE "真实姓名|个人署名|学校全称|学院全称|教师姓名" .
 
 ## 作者
 
-[jry21223](https://github.com/jry21223)
+[jry21223](https://github.com/jry21223) · [styleliyu](https://github.com/styleliyu)
 
 ## License
 
